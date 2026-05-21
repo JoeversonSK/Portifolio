@@ -1,0 +1,99 @@
+:root {
+  --color-primary: #000000;
+  --color-secondary: #7C3AED;
+  --color-accent: #87CEEB;
+  --color-dark: #0F0F1E;
+  --color-light: #F0F4F8;
+  --color-neon-green: #00ff66;
+  --color-pink: #ff0055;
+  --color-cyan: #00f0ff;
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px rgba(184, 224, 232, 0.4);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 20px rgba(160, 217, 149, 0.4);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #B8E0E8, #A0D995);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.planet {
+  border-radius: 50%;
+  position: relative;
+  box-shadow: inset -2px -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.planet1 {
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle at 30% 30%, #87CEEB, #5a9bcc);
+  box-shadow: 0 0 15px rgba(135, 206, 235, 0.8);
+  animation: orbitPlanet1 20s linear infinite;
+}
+
+.planet2 {
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle at 35% 35%, #7C3AED, #5d2fb8);
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.8);
+  animation: orbitPlanet2 24s linear infinite;
+}
+
+.planet3 {
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle at 40% 40%, #87CEEB, #4a7aa8);
+  box-shadow: 0 0 14px rgba(135, 206, 235, 0.7);
+  animation: orbitPlanet3 28s linear infinite;
+}
+
+.spaceship-container {
+  position: relative;
+  width: 120px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spaceship {
+  width: 50px;
+  height: 30px;
+  animation: spaceship-fly 4s ease-in-out infinite;
+}
+
+.moon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffffff, #87CEEB);
+  animation: moon-glow 3s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(135, 206, 235, 0.4), inset -2px -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.space-name {
+  position: relative;
+  display: inline-block;
+  animation: textGlow 4s ease-in-out infinite;
+}
+
+.space-name-container {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+}
