@@ -23,11 +23,11 @@ export const Hero: React.FC = () => {
           </div>
 
           <p className="text-lg text-gray-200 leading-relaxed animate-fade-in-up animation-delay-4 hover:text-accent transition">
-            Seja bem-vindo ao meu espaço digital: onde transformo lógica e código em soluçlões completas 
+            Seja bem-vindo ao meu espaço digital: onde transformo lógica e código em soluções completas.
           </p>
 
           <div className="space-y-2 text-gray-300 animate-fade-in-up animation-delay-5">
-            <p>Explorando novas tecnologias todo dia </p>
+            <p>Explorando novas tecnologias todo dia. </p>
           </div>
 
           <div className="flex gap-4 animate-fade-in-up animation-delay-6">
