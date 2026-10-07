@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
@@ -7,11 +6,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#000000',        // Preto
-        secondary: '#7C3AED',      // Roxo vibrante
-        accent: '#87CEEB',         // Azul bebê
-        dark: '#0F0F1E',           // Preto muito escuro
-        light: '#F0F4F8',          // Branco off
+        primary: '#000000',
+        secondary: '#7C3AED',
+        accent: '#87CEEB',
+        dark: '#0F0F1E',
+        light: '#F0F4F8',
+      },
+      fontFamily: {
+        sans: ['Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
+        display: ['"Space Grotesk"', 'Inter', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in',

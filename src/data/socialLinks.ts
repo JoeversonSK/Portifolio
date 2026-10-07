@@ -2,23 +2,25 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { SocialLink } from '../types';
 
+export const EMAIL = "Joeversonsantana@gmail.com";
+
 export const socialLinks: SocialLink[] = [
   {
     label: "Email",
+    handle: EMAIL.toLowerCase(),
     icon: MdEmail,
-    url: "mailto:Joeversonsantana@gmail.com",
-    color: "#87CEEB"
+    url: `mailto:${EMAIL}`,
   },
   {
     label: "GitHub",
+    handle: "@JoeversonSK",
     icon: FaGithub,
     url: "https://github.com/JoeversonSK",
-    color: "#87CEEB"
   },
   {
     label: "LinkedIn",
+    handle: "in/joeverson-santana",
     icon: FaLinkedin,
     url: "https://www.linkedin.com/in/joeverson-santana",
-    color: "#7C3AED"
-  }
+  },
 ];

@@ -1,41 +1,78 @@
 import React from 'react';
+import { HiArrowUpRight, HiCheck } from 'react-icons/hi2';
+import { FaGithub } from 'react-icons/fa';
 import { projects } from '../../data/projects';
 import { SectionTitle } from '../common/SectionTitle';
+import { GlowCard } from '../common/GlowCard';
+import { Reveal } from '../common/Reveal';
 
 export const Projects: React.FC = () => {
   return (
-    <section id="projects" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <SectionTitle title="Projetos" />
-      <div className="space-y-6">
-        {projects.map((project, i) => (
-          <div
-            key={i}
-            className="bg-gradient-to-r from-white/10 to-white/5 border border-secondary/30 rounded-xl p-8 hover:border-secondary/80 transition-all hover:shadow-lg hover:shadow-accent/20 transform hover:scale-105 duration-300 animate-fade-in-up group"
-          >
-            <div className="flex justify-between items-start mb-4">
-              <h3 className="text-2xl font-bold text-white group-hover:text-accent transition">
-                {project.title}
-              </h3>
-              <span className="bg-secondary text-white px-4 py-1 rounded-full text-sm font-bold animate-bounce-gentle glow-secondary">
-                {project.status}
-              </span>
-            </div>
-            <p className="text-gray-200 mb-4 leading-relaxed group-hover:text-gray-100 transition">
-              {project.desc}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {project.tech.map((tech, j) => (
-                <span
-                  key={j}
-                  className="px-3 py-1 bg-accent/20 border border-accent/40 text-accent rounded-lg text-sm font-medium hover:bg-accent/40 transition transform hover:scale-110 duration-300"
-                  style={{ animationDelay: `${j * 0.1}s` }}
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
+    <section id="projects" className="relative py-24 md:py-32 scroll-mt-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle
+          index="02"
+          eyebrow="projetos"
+          title="Projetos"
+          description="Produtos completos, do banco de dados à interface."
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {projects.map((project, i) => {
+            const Icon = project.icon;
+            return (
+              <Reveal key={project.title} delay={i * 0.12} className="h-full">
+                <GlowCard className="h-full flex flex-col p-6 md:p-8">
+                  <div className="flex items-start justify-between gap-4 mb-6">
+                    <span className="project-icon">
+                      <Icon size={26} />
+                    </span>
+                    <span className="inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-300/10 px-3 py-1 text-xs font-medium text-amber-200">
+                      <span className="status-dot" />
+                      {project.status}
+                    </span>
+                  </div>
+
+                  <h3 className="font-display text-2xl md:text-3xl font-bold text-white tracking-tight">{project.title}</h3>
+                  <p className="font-mono text-sm text-accent/90 mt-1 mb-4">{project.subtitle}</p>
+                  <p className="text-gray-300 leading-relaxed mb-6">{project.desc}</p>
+
+                  <ul className="space-y-2 mb-8">
+                    {project.highlights.map(item => (
+                      <li key={item} className="flex items-center gap-2.5 text-sm text-gray-300">
+                        <HiCheck className="text-secondary shrink-0" size={16} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-auto flex flex-wrap items-center gap-2">
+                    {project.tech.map(tech => (
+                      <span key={tech} className="font-mono text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-gray-300">
+                        {tech}
+                      </span>
+                    ))}
+
+                    {(project.repo || project.demo) && (
+                      <div className="ml-auto flex gap-3">
+                        {project.repo && (
+                          <a href={project.repo} target="_blank" rel="noreferrer" aria-label={`Código de ${project.title}`} className="text-gray-400 hover:text-white">
+                            <FaGithub size={20} />
+                          </a>
+                        )}
+                        {project.demo && (
+                          <a href={project.demo} target="_blank" rel="noreferrer" aria-label={`Abrir ${project.title}`} className="text-gray-400 hover:text-white">
+                            <HiArrowUpRight size={20} />
+                          </a>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </GlowCard>
+              </Reveal>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
